@@ -1,0 +1,66 @@
+body{
+    background: rgb(241, 248, 227);
+}
+
+h2 ,p{
+    margin: 0;
+}
+
+
+.card-item a {
+    border-radius: 8px;
+    /*overflow : 박스보다 컨텐츠가 더 커서 넘칠경우 어떻게 처리할지*/
+    overflow: hidden;
+    text-decoration: none;
+    color: #29363d;
+    display: block;
+    width: 288px;
+    background: #ffffff;
+    box-shadow: 2px 2px 8px black;
+
+
+}
+.card-item img{ 
+    width: 100%;
+    aspect-ratio: 288/196;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.card-text {
+    padding: 24px 16px 16px;
+}
+.card-text .title{
+    font-size: 16px;
+    white-space: nowrap;
+    /*박스에서 넘치는 텍스트 숨기기*/
+    overflow: hidden;
+    /*박스에서 넘치는 텍스트 말줄임표 대체*/
+    text-overflow: ellipsis;
+}
+
+.card-text .title +p{
+    font-size: 12px;
+    color: #5a6a72;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    margin: 12px 0 16px;
+    line-height: 20px;
+    height: 40px;
+}
+.underline { 
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 6px;
+}
+.all {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(288px, 288px));
+    gap: 32px 24px;
+    width: min(1224px, calc(100% - 60px));
+    margin: auto;
+}
