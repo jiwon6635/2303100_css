@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <style>
+          h1,
+    h2 {
+      font-size: 20px;
+    }
+
+    h2 {
+      display: inline-block;
+      box-shadow: inset 0 -0.6em yellow;
+    }
+
+    pre {
+      background: #eee;
+      padding: 20px 0 10px 0;
+    }
+
+    strong{
+      color:royalblue;
+    }
+
+    [class^="container"] {
+      display: flex;
+      width: 600px;
+      background: #ddd;
+
+    }
+
+    .item p {
+      width: 20px;
+      text-align: center;
+    }
+
+    .item {
+      background: skyblue;
+    }
+
+    .item:first-child {
+      background: gold;
+    }
+
+    .container1 .item,
+    .container2 .item,
+    .container3 .item {
+      flex-grow: 1;
+    }
+
+    /* container2 */
+    /*flex-basis를 안해주면 남은 여백에서 나눠가짐(비율대로안나눠짐)*/
+    .container2 .item:nth-child(1),
+    .container3 .item:nth-child(1) {
+      flex-grow: 2;
+    }
+
+    /* container3 */
+    .container3 .item {
+      flex-basis: 0;
+    }
+    </style>
+</head>
+<body>
+    <h1>flex</h1>
+<h2>A:20px / B:20px (flex-grow 속성 없음)</h2>
+<p><strong>요소 크기</strong> 20px * 5 = 100px / <strong>여백</strong> 500px</p>
+<div class="container">
+  <div class="item">
+    <p>A</p>
+  </div>
+  <div class="item">
+    <p>B</p>
+  </div>
+  <div class="item">
+    <p>C</p>
+  </div>
+  <div class="item">
+    <p>D</p>
+  </div>
+  <div class="item">
+    <p>E</p>
+  </div>
+</div>
+<hr>
+<h2>A: 120px / B: 120px</h2>
+<p><strong>전체크기</strong> 600px/5 = 120px</p>
+<pre>
+.item {
+  flex-grow: 1;
+}
+</pre>
+<div class="container1">
+  <div class="item">
+    <p>A</p>
+  </div>
+  <div class="item">
+    <p>B</p>
+  </div>
+  <div class="item">
+    <p>C</p>
+  </div>
+  <div class="item">
+    <p>D</p>
+  </div>
+  <div class="item">
+    <p>E</p>
+  </div>
+</div>
+<hr>
+<h2>A: 186.66px / B: 103.34px</h2>
+<p><strong>여백</strong> 500px/6(grow:2 1 1 1 1) = 83.33...px</p>
+<p>원래크기 20px</p>
+<pre>
+.item {
+  flex-grow: 1;
+}
+
+.item:nth-child(1){
+  flex-grow: 2;
+}
+  </pre>
+<div class="container2">
+  <div class="item">
+    <p>A</p>
+  </div>
+  <div class="item">
+    <p>B</p>
+  </div>
+  <div class="item">
+    <p>C</p>
+  </div>
+  <div class="item">
+    <p>D</p>
+  </div>
+  <div class="item">
+    <p>E</p>
+  </div>
+</div>
+<hr>
+<h2>A: 200px / B: 100px</h2>
+<p><strong>전체크기</strong> 600px/6(grow:2,1,1,1,1) = 100px</p>
+<pre>
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.item:nth-child(1){
+  flex-grow: 2;
+}
+  </pre>
+<div class="container3">
+  <div class="item">
+    <p>A</p>
+  </div>
+  <div class="item">
+    <p>B</p>
+  </div>
+  <div class="item">
+    <p>C</p>
+  </div>
+  <div class="item">
+    <p>D</p>
+  </div>
+  <div class="item">
+    <p>E</p>
+  </div>
+</div>
+
+</body>
+</html>

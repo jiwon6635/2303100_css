@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        /*float랑 flex랑 다르게 화면에 나타나는 이유 찾고 수정해보기*/
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            background: royalblue;
+            width: 1400px;
+            height: 100px;
+            margin: auto;
+            /*좌우 여백 40px씩 생김*/
+            max-width: calc(100% - 80px);
+        }
+        .float {
+            overflow: hidden;
+        }
+        .float li{
+            background: gold;
+            float: left;
+            width: calc((100% - (24px * 3 )) / 4);
+        }
+        .float li:not(:first-child) {
+            margin-left: 24px;
+        }
+
+        .flex {
+            background: salmon;
+            display: flex;
+            gap: 24px;
+        }
+        .flex li {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        contents
+    </div>
+    <ul class="float">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul class="flex">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+</body>
+</html>
