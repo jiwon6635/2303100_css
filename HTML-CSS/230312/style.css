@@ -1,0 +1,41 @@
+h1,p {
+    margin: initial;
+    padding: initial;
+}
+
+img {
+    vertical-align: top;
+}
+
+
+
+body {
+    background-image: url(./images/bg.png);
+    background-image: cover;
+
+}
+
+.wrapper {
+    width: 300px;
+    margin: auto;
+    padding: auto;
+
+}
+
+.section {
+    background-color: #93572E;
+    color: #ffffff;
+    border-radius: 0 0 20px 20px; 
+    box-shadow: rgb(80, 42, 17) 0px 10 px;
+}
+
+.section h1 {
+    padding: 10px 20px;
+}
+.section p {
+    padding: 0 20px 30px 20px;
+    font-size: 17px;
+    text-align: left;
+    color: #fbfbfbad;
+
+}
