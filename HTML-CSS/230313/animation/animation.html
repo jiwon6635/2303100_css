@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>움직이는 캐릭터 만들기</title>
+<style>
+    .licat {
+        /*움직이는 캐릭터가 나올 크기만큼 생성*/
+    width: 168px;
+    height: 200px;
+    background: url(./img/keyframes-licat.png) no-repeat 0 0 / auto 100%;
+    /*속도와 반복, 나누는 장면 체크*/
+    animation: move-licat 0.8s infinite steps(6);
+    }
+
+    .licat:active {
+        /*이미지를 클릭했을때 멈춤*/
+    animation-play-state: paused;
+    }
+
+    @keyframes move-licat {
+    to {
+        /*배경으로 설정한 전체 이미지가 오른쪽 순서로 캐릭터가 나오도록 설정*/
+        background-position: right 0;
+    }
+    }
+</style>
+</head>
+
+<body>
+<div class="licat"></div>
+
+
+</body>
+
+</html>
