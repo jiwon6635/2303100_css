@@ -1,0 +1,84 @@
+/* 브라우저가 지원해주는 스타일 초기화 */
+h1,ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* 가운데 정렬 */
+.wrapper {
+    /* box-shadow: inset 0 0 10px red; */
+    /* width: 800px */
+    /* 반응형 만들어주기 위해 auto로주고 제한값 준다. +)미디어쿼리 */
+    width: auto;
+    max-width: 960px;
+    margin: 100px auto;
+}
+
+
+.section-timeline {
+    /* 왼쪽 빈 공간을 채우기 위해 negative margin줘서 땡긴다. */
+    margin: 0 -20px;
+    position:relative;
+}
+
+.section h1 {
+    margin-bottom: 30px;
+}
+
+.section-timeline::before {
+    /* content : 'wow'; */
+    background:red;
+    position: absolute;
+    inset: 0;
+    width: 10px;
+    margin: 40px auto -60px;
+    border-radius: 40px;
+}
+
+
+.section-timeline li {
+    /* box-shadow: inset 0 0 5px blue; */
+    /* width의 "percent" => 컨테이닝 블록 너비의 백분욜.
+    width auto는 패딩마진값까지 포함해서 계산됨
+    50% 주면 반틈만 차지 */
+    width: 50%;
+    padding: 0 20px; 
+    /* 원래 initial value인 content-box에서 border box로 바꾸면서 
+    padding값과 borer값 포함한 박스가 됨=>원래 크기 유지됨 */
+    box-sizing: border-box;
+
+}
+
+.section-timeline li:nth-child(even) {
+    /* 오른쪽으로 이동가능 */
+    margin-left: auto;
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+
+
+.year {
+    background-color: orange;
+    padding: 40px;
+    min-height: 120px;
+    border-radius: 40px;
+}
+
+
+@media (max-width: 800px)  {
+    .section-timeline li,
+    .section-timeline li:nth-child(even) {
+        /* width:auto = width: initial 똑같음 width값을 없애주면서 반응형 적용되도록함. */
+        width: initial;
+        /* margin-top: -40px;
+        margin-bottom: -40px;
+        을 없애주기위해 0 0 20 0 해줌
+        다른값들은 0으로 안바뀌므로 margin bottom만 주는것과 결과 다름 */
+        margin: 0 0 20px 0;
+    }
+}
+
