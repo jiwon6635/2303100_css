@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap%22');
+
+.container p,
+h3 {
+    margin: 0;
+}
+
+body {
+    background-color: rgba(234, 232, 254, 1);
+    width: 1920px;
+    height: 963px;
+    font-family: 'Jua', sans-serif;
+}
+
+header img {
+    width: 386px;
+    height: 164.12px;
+    display: block;
+    margin: 0 auto;
+}
+.container {
+    width: 748px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a b"
+        "a c";
+    gap: 20px;
+    margin: 0 auto;
+    margin-top: 82px;
+}
+.a {
+    /* box-shadow: inset 0 0 10px blue;  */
+    background: rgba(255, 255, 255, 1);
+    width: 360px;
+    height: 545px;
+    grid-area: a;
+}
+
+.b {
+    /* box-shadow: inset 0 0 10px red; */
+    background: rgba(255, 255, 255, 1);
+    width: 360px;
+    height: 50px;
+    grid-area: b;
+}
+.c {
+    /* box-shadow: inset 0 0 10px green;  */
+    background: rgba(255, 255, 255, 1);
+    width: 360px;
+    height: 480px;
+    grid-area: c;
+}
+
+
+/* grid a-1 */
+
+.dp {
+    width: 306px;
+    display: grid;
+    grid-template-columns: repeat(2,3fr);
+    grid-template-areas:
+        "aa bb cc"
+        "dd ee ff";
+    gap: 12px;
+    margin-top: 31px;
+    margin-left: 24px;
+
+}
+.dp p {
+    font-size: 9px;
+    font-weight: 500;
+    text-align: center;
+    margin: 6.7px auto;
+}
+
+.dp h3 {
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 22px;
+    width: 72px;
+    height: 22px;
+    color: #fff;
+    background-color: #6327FE;
+    border-radius: 20px;
+    margin: 7px auto;
+
+}
+.dp img{
+    width: 35.86px;
+    height: 64.86px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 11.07px;
+}
+
+
+/* 상자 스타일 */
+.red {
+    grid-area: aa;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+.violet {
+    grid-area: bb;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+.yellow {
+    grid-area: cc;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+.cool {
+    grid-area: dd;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+.green {
+    grid-area: ee;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+.orange{
+    grid-area: ff;
+    width: 94px;
+    height: 130px;
+    border: 2px solid #888282;
+    border-radius: 15px;
+}
+
+/* grid a-2 */
+
+.calc {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-template-areas:
+        "aaa bbb"
+        "ccc ddd"
+        "eee fff";
+    gap: 12px;
+    margin: 20px 28px 27px 27px;
+}
+.balance {
+    grid-area: aaa;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 33px;
+    line-height: 33px;
+    background-color: #EAE8FE;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+    box-sizing: border-box;
+
+} 
+.balance p:nth-child(1) {
+    margin-left: 10px;
+}
+
+.balance p:nth-child(2) {
+    margin-right: 10px;
+}
+.return {
+    grid-area: bbb;
+    width: 94px;
+    height: 33px;
+    font-size: 13px;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    line-height: 33px;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+    box-sizing: border-box;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.input {
+    grid-area: ccc;
+    width: 200px;
+    height: 33px;
+    font-size: 13px;
+    color: #dbdbdb;
+    line-height: 33px;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+    box-sizing: border-box;
+
+}
+
+.input p {
+    margin-left: 6px;
+}
+
+.deposit {
+    grid-area: ddd;
+    width: 94px;
+    height: 32px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid #dbdbdb;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+}
+
+.choice {
+    grid-area: eee;
+    width: 200px;   
+    height: 134px;
+    box-shadow: inset 0 0 2px rgb(216, 24, 24); 
+    background-color: #EAE8FE;
+    border-radius: 5px;
+}
+
+.get {
+    grid-area: fff;
+    width: 94px;
+    height: 106px;
+    font-size: 13px;
+    background-color: #6327fe;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 106px;
+}
+
+/* grid b */
+.my_money {
+    width: 306px;
+    height: 32px;
+    background: rgba(234, 232, 254, 1);
+    margin:  9px auto;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bolder ;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.my_money p:nth-child(1) {
+    margin-left: 6px;
+}
+.my_money p:nth-child(2) {
+    margin-right: 6px;
+}
+/* grid c */
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.c p{
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin: 28px auto;
+}
+
+ul {
+    min-height: 600px;
+}
+
+.list {
+    width: 306px;
+    height: 364px;
+    background: #EAE8FE;
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px rgb(71, 71, 105); 
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.list p {
+    width: 109px;
+    height: 20px;
+    margin: 0;
+    font-size: 9px;
+    line-height: 20px;
+}
+
+.all {
+    width: 109px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    margin-top: 6px;
+    margin-left: auto;
+}
+
+/* 스크롤바 막대 꾸미기 */
+
+.list::-webkit-scrollbar{
+    background-color: #ffffff;
+    width: 4px;
+    border: 1px solid salmon;    
+    border-radius: 10px;
+    
+}
+
+.list::-webkit-scrollbar-button:no-button {
+}
+
+
+
+
+li .origin {
+    position: relative;
+    box-shadow: inset 0 0 2px rgb(71, 71, 105); 
+    width: 276px;   
+    height: 46px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 8px 14px;
+    top: 12px;
+}
+
+.origin img {
+    position: absolute;
+    box-shadow: inset 0 0 10px salmon;
+    width: 17.93px;
+    height: 32.93px;
+    margin: 7px 10px
+}
+
+.origin p {
+    position: absolute;
+    width: 73px;
+    height: 10px;
+    margin: 14px 0;
+    margin-left: 38px;
+}
+.origin h3 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 8px 0;
+    margin-left: 238px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
