@@ -80,7 +80,7 @@ header img {
     text-align: center;
     line-height: 22px;
     width: 72px;
-    height: 22px;
+    height: 20px;
     color: #fff;
     background-color: #6327FE;
     border-radius: 20px;
@@ -101,23 +101,44 @@ header img {
     grid-area: aa;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    box-shadow: 0 0 0 3px inset #6327FE;
     border-radius: 15px;
+    /* box-sizing: border-box; */
 }
 
+.violet::before {
+    position: absolute;
+    content: "";
+    width: 94px;
+    height: 130px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+.dp img:last-child {
+    position: absolute;
+    /* border: 1px solid salmon; */
+    width: 57px;
+    height: 44px;
+    top: 38px; 
+    right: 20px;
+    z-index: 1;
+} 
 .violet {
+    position: relative;
     grid-area: bb;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    border: 2px solid #c6c0c0;
+    box-shadow: inset 0 0 4px #878383;
     border-radius: 15px;
-}
+}    
 
 .yellow {
     grid-area: cc;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    box-shadow: inset 0 0 4px #878383;
     border-radius: 15px;
 }
 
@@ -125,7 +146,7 @@ header img {
     grid-area: dd;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    box-shadow: inset 0 0 4px #878383;
     border-radius: 15px;
 }
 
@@ -133,7 +154,7 @@ header img {
     grid-area: ee;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    box-shadow: 0 0 0 3px inset #6327FE;
     border-radius: 15px;
 }
 
@@ -141,7 +162,7 @@ header img {
     grid-area: ff;
     width: 94px;
     height: 130px;
-    border: 2px solid #888282;
+    box-shadow: inset 0 0 4px #878383;
     border-radius: 15px;
 }
 
@@ -201,7 +222,7 @@ header img {
     height: 33px;
     font-size: 13px;
     color: #dbdbdb;
-    line-height: 33px;
+    line-height: 30px;
     align-items: center;
     border-radius: 5px;
     border: 2px solid #dbdbdb;
@@ -222,18 +243,75 @@ header img {
     border: 2px solid #dbdbdb;
     font-size: 13px;
     font-weight: 500;
-    line-height: 32px;
+    line-height: 30px;
     text-align: center;
 }
 
 .choice {
     grid-area: eee;
     width: 200px;   
-    height: 134px;
-    box-shadow: inset 0 0 2px rgb(216, 24, 24); 
+    height: 106px;
+    /* box-shadow: inset 0 0 2px rgb(216, 24, 24);  */
     background-color: #EAE8FE;
     border-radius: 5px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+
+.user-choice {
+    position: relative;
+    box-shadow: inset 0 0 2px rgb(71, 71, 105); 
+    width: 170px;   
+    height: 46px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 8px auto;
+}
+.user-choice img {
+    position: absolute;
+    box-shadow: inset 0 0 10px salmon;
+    width: 17.93px;
+    height: 32.93px;
+    margin: 7px 10px
+}
+
+.user-choice p {
+    position: absolute;
+    font-size: 9px;
+    width: 73px;
+    height: 10px;
+    margin: 14px 0;
+    margin-left: 38px;
+}
+.user-choice h3 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-left: 128px;
+    margin-top: 7px;
+    text-align: center;
+    border: 1.5px solid rgba(189, 189, 189, 1);
+    border-radius: 5px;
+}
+
+.choice::-webkit-scrollbar{
+        width: 10px;
+}
+
+.choice::-webkit-scrollbar-thumb {
+    height: 79px;
+    background-color: #ffffff;
+    background-clip: padding-box; 
+    border-radius: 5px;
+    border: 3px solid transparent;
+}
+
+.choice::-webkit-scrollbar-track {
+    background-color: #eae8fe;
+    border-radius: 5px;
+}
+
 
 .get {
     grid-area: fff;
@@ -316,18 +394,22 @@ ul {
 /* 스크롤바 막대 꾸미기 */
 
 .list::-webkit-scrollbar{
+    width: 10px;
+    height: 70px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    height: 79px;
     background-color: #ffffff;
-    width: 4px;
-    border: 1px solid salmon;    
-    border-radius: 10px;
-    
+    background-clip: padding-box; 
+    border-radius: 5px;
+    border: 3px solid transparent;
 }
 
-.list::-webkit-scrollbar-button:no-button {
+.list::-webkit-scrollbar-track {
+    background-color: #eae8fe;
+    border-radius: 5px;
 }
-
-
-
 
 li .origin {
     position: relative;
@@ -359,10 +441,10 @@ li .origin {
     width: 30px;
     height: 30px;
     position: absolute;
-    margin: 8px 0;
+    margin: 7px 0;
     margin-left: 238px;
     text-align: center;
-    border: 1px solid #000;
+    border: 1.5px solid rgba(189, 189, 189, 1);
     border-radius: 5px;
 }
 
