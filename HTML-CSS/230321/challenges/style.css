@@ -1,0 +1,155 @@
+:root {
+    font-family: 'Montserrat', sans-serif;
+	/*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+h1,
+h2,
+h3,
+p {
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+li {
+	padding: 0;
+	list-style: none;
+}
+body {
+	background-color: #673399;
+}
+
+img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.wrap {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	margin: 100px auto;
+}
+
+header h1 {
+	font-size: 40px;
+	color: #fff;
+	font-weight: 300;
+	width: 26%;
+	margin-top: -10px;
+	font-weight: lighter;
+	z-index: 1;
+}
+.title strong {
+	position: relative;
+	width: max-content;
+	font-weight: lighter;
+}
+
+.title strong::before {
+	content: ' ';
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	background-color: orangered;
+	z-index: -1; 
+	top: 30px;
+
+} 
+
+
+header p {
+	font-size: 14px;
+	font-weight: 300;
+	color: #db8fe8fc;
+	margin: auto;
+	margin-left: 0;
+}
+
+.line {
+	width: 80px;
+	height: 1.5px;
+	background-color: #db8fe8fc;
+	opacity: 0.8;
+	margin: auto 30px auto 20px;
+	margin-left: 0;
+}
+
+.section {
+	width: 1080px;
+	margin: 24px auto;
+	background: #fff;
+	display: flex;
+	font-size: 14px;
+}
+
+.section-list:last-child {
+	margin-bottom: 100px;
+}
+
+
+.section-cover {
+	display: flex;
+	position: relative;
+	width: 26%;
+	flex-shrink: 0;
+	margin: auto;
+	justify-content: center;
+}
+
+.section-cover::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color:rgb(189, 143, 232, 0.4);
+	z-index: 1;
+}
+
+.section-cover-text {
+	/* box-shadow: inset 0 0 4px red; */
+	position: absolute;
+	font-size: 30px;
+	font-weight: lighter;
+	color: #ffffffdc;
+	z-index: 2;
+	margin-top: 75px;
+}
+.section-contents {
+	flex-grow: 1;
+	padding: 24px;
+}
+.section-contents h3{
+	color: #673399;
+	font-size: 18px;
+	margin-bottom: 32px;
+}
+
+.section-contents li{
+	color: #000;
+	font-size: 14px;
+	margin-top: 10px; 
+}
+
+.section-contents li::before {
+	display: inline-block;
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #bd8fe8;
+	margin-right: 10px;
+}
+
+.section:nth-child(2n) {
+	/* border: 4px solid red;  */
+	flex-direction: row-reverse;
+}
+
