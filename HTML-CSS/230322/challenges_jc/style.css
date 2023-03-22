@@ -1,0 +1,184 @@
+body,p,ul {
+    margin: initial;
+    padding: initial;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* :root로 지정해주고 button처럼 폰트가 제공되는 속성들은 inherit 상속해줘서 
+초기화해주는 방법 선호 */
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+h1,h2,h3,h4 {
+    margin: initial;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.l_wrapper {
+    /* box-shadow: inset 0 0 10px red; */
+    width: 1080px;
+    margin: 0 auto;
+}
+
+/* 부모로써 내부에 자식으로 오는 컨텐츠에 상관 없이 section안의 컨텐츠 공간을 유지해줄 수 있음. 부모가 자식을 컨트롤 할땐 padding 사용 하면 좋다. */
+.section {
+    padding: 100px 0;
+}
+
+.section_purple {
+    background-color: #673399;
+    color: white;
+}
+
+.section_pink {
+    background-color: seashell;
+    color: salmon;
+}
+
+.section-header {
+    /* box-shadow: inset 0 0 10px cyan; */
+    margin-bottom: 100px;
+}
+
+.section-contents {
+    /* box-shadow: inset 0 0 10px deeppink; */
+}
+
+.title {
+    /* box-shadow: inset 0 0 10px yellow; */
+    display: flex;
+    align-items: center;
+}
+
+
+
+.title-headings {
+    /* box-shadow: inset 0 0 10px darkorange; */
+    /* flex-item에 width값 대신 flex-basis값으로 준다 */
+    flex-basis: 26%;
+    /* flex-basis를 26%줬을때 안먹히는 이유는 flex-item에는 flex-shrink라는 속성이 이미 지정이 되어있는데 initial value가 1이기 때문에 공간이 여유가 없으면 쪼그라 들게 되어있다. flex-shrink를 0으로 초기화 해주자*/
+    flex-shrink: 0;
+    font-size : 40px;
+}
+
+.title-headings strong {
+    /* box-shadow: inset 0 -20px 0 orangered; */
+}
+
+.title p {
+    /* box-shadow: inset 0 0 10px darkorange; */
+    /* 반응형 생각해서 */
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.title p::before {
+    content: ' ';
+    width: 60px;
+    height: 2px;
+    flex-shrink: 0;
+    background-color: currentColor;
+    margin-right: 20px;
+}
+
+
+
+.card {
+    background-color: #fff;
+    color: #222;
+    margin-bottom: 24px;
+    display: flex;
+    min-height: 200px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+
+.card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.card-cover {
+    /* box-shadow: inset 0 0 10px darkorange; */
+    flex-basis: 26%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+/* background 이미지처럼 이미지를 설정해주는 과정 */
+.card-cover img {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    /* background 이미지처럼 비율이 줄어들도록 */
+    /* !!!!!!!!!!!새로운 세계로!!!!!!!!!!!!! */
+    object-fit: cover;
+    }
+
+
+.card-cover h2 {
+    /* 나중에 마크업 된거랑 상관없이 postion에 relative줘서 아픙로 나오게 함 -> 종찬님의 트릭 사실 이미지에 position줘서 하면 모바일 반응형에서 메리트가 없으므로 h2의 position을 absolute로 바꾼다*/
+    /* position: relative; */
+    position: absolute;
+    /* background-color: rgba(0 0 0 / .4); */
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
+.card-contents {
+    /* 안에 컨텐츠와 상관없이 grow값으로만 (전체가 가득찰 수 있도록) 결정되도록 0으로 지정 auto로 줘도 상관없음 */
+    flex-basis: 0;
+    flex-grow: 1;
+    /* flex-item 에 있는 min-width값은 auto로 지정되어 있는데 컨텐츠 크기만큼으로 지정된다. 따라서 min-width값을  0으로 해줘서 컨텐츠 밖으로 나가지 않도록 함 */
+    min-width: 0;
+    padding: 30px;
+}   
+
+.lists {
+    /* box-shadow: inset 0 0 20px red; */
+}
+
+.lists li {
+    text-indent : -20px;
+    padding-left: 20px;
+
+}
+
+.lists li + li {
+    margin-top: 6px;
+}
+
+
+.lists li::before {
+    content:' ';
+    background-color: orange;
+    /* inline요소라서 width값 height값 없다. */
+    width: 10px;
+    height: 10px;
+    /* inline요소들이 가로로 정렬되게 하기위해서 */
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
