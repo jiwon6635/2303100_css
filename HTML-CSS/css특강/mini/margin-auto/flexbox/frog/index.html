@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexing</title>
+        <style>
+            body {
+                background-color: brown;
+            }
+            .playground {
+                border: 10px solid maroon;
+                width: 980px;
+                margin: 0 auto;
+                border-radius: 20px;
+                background-color: skyblue;
+                /* flex-container => 부모(전체집)
+                   flex-item => 자식(하숙생) */
+                   /* flex기본값 row */
+                display: flex;
+                /* item들이 왼쪽으로 모이고 남는 공간은 셋이서 나눠 쓸수 있는 공간이다 */
+                /* 하숙생들 정리해줌! 중간으로  min-width: 0으로 해주는 것과 적절히 잘 사용하기!!!!!!!!
+                justify-content의 초기값 start임*/
+                height: 400px;
+                justify-content: center;
+                /* ?????? */
+                /* align-items: flex-start;  */
+
+            }
+            .frog {
+                background-color: mediumseagreen;
+                color: lime;
+                font-size: 40px;
+                /* 원하는 위치로 가도록 margin auto 사용하면 다 다르게할수있다.!!!! */
+                margin: auto 10px;
+                border: 6px solid green;
+                border-radius: 10px;
+                /* basis auto는 컨텐츠의 크기로 잡힌다.
+                basis값 0해주면 그대로다. =>방이 왜 안작아지는가? min-width때문이다. */
+                flex-basis: 200px;
+                /* flex-grow: 1;  남는 공간 나눠가짐 basis값을 줬을때 크기가 제일 큰애가 제일 커짐 똑같은 비율로 나눠도 원래 크기가 큰애가 똑같이 더커지므로 */
+                /* flex-shrink => 초기값 1 */
+                /* flex-item으로 지정되면 가지는 속성중에 min-width가 있는데 초기값이 auto이며 이것은 내부에 있는 컨텐츠 크기만큼이다.container 공간이 부족해도 min-width를 0으로 바꿔줘야 안삐져나간다.
+                공간이 모자라도 0으로 초기화 해주지않으면 크기가 줄어들지 않는다. */
+                /* min-width: 0; */
+                /* height: 300px; */
+                
+            }
+            
+            /* 위치 확인해보기
+            .frog.first {
+                background-color: rgb(213, 167, 177);
+                오른쪽 끝으로 보냄 
+                margin-left: auto;
+            }
+            .frog.second {
+                background-color: crimson;
+                
+            }
+            .frog.third {
+                background-color: rgb(211, 223, 201);
+                
+            }  */
+
+
+            .frog.sun {
+                /* 자식하나가 커지면 부모가 커지고 다른 자식들도 같이 커진다. 부모만 키워도 자식 다커진다.
+                flex에 기본적으로 align-items가 들어있는데 초기값이 stretch라서 늘어나게 되어있다.*/
+                /* height: 400px; */
+                /* 원하는 위치로 가도록 margin auto 사용하면 다 다르게할수있다.!!!! */
+                margin-top: auto;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="playground">
+            <!-- 여섯개 넣으면 삐져나가는 이유 
+            flex-item들이 가지는 속성중에 min-width가 있는데 초기값이 auto이며 이것은 내부에 있는 컨텐츠 크기만큼이다.
+            공간이 모자라도 0으로 초기화 해주지않으면 크기가 줄어들지 않는다.-->
+            <!-- <div class="frog first">Frog</div>
+            <div class="frog second">Frog</div>
+            <div class="frog third">Frog</div> -->
+            <div class="frog"><img src="./images/frog.png" alt=""></div>
+            <!-- <div class="frog"><img src="./images/frog-dj.png" alt=""></div> -->
+            <!-- <div class="frog"><img src="./images/frog-dj.png" alt=""></div> -->
+            <!-- <div class="frog"><img src="./images/frog-dj.png" alt=""></div> -->
+            <div class="frog"><img src="./images/frog-dj.png" alt=""></div>          
+            <div class="frog sun"><img src=".//images/frog-disco.png" alt=""></div>
+            
+
+        </div>
+
+    </body>
+</html>
