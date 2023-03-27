@@ -1,0 +1,20 @@
+$jiwon1: #000;
+$jiwon2: pink;
+// 한글 변수를 권장하지 않습니다.
+// 고유 명사 같은 경우는 한글 변수를 사용할 수 있습니다.
+$지원: red;
+$큰글자: 34px;
+
+.one {
+    font-size: $큰글자;
+    color: $jiwon2;
+}
+
+.two {
+    background-color: $jiwon2;
+    color: $jiwon1;
+}
+
+.three {
+    color: $지원;
+}
