@@ -16,6 +16,7 @@ let c = null;
 console.log(a ?? b ?? c)
 
 // 단락회로평가와 nullish 연산자 차이점
+// Nullish 연산자 ??는 왼쪽 피연산자가 null 또는 undefined인 경우에만 오른쪽 피연산자를 반환합니다. 그렇지 않으면, 왼쪽 피연산자를 반환합니다.
 let height = 0;
 console.log(height || 100)
 console.log(height ?? 100)
