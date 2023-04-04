@@ -156,20 +156,20 @@ function 함수1(a, b, c) {
     return a + b + c
 }
 
-함수1(10, 20, 30, 40) //error가 발생하지 않습니다.
+함수1(10, 20, 30, 40) //error가 발생하지 않습니다. 
 
-함수1(10, 20) // error가 발생하지 않습니다.
+함수1(10, 20) // error가 발생하지 않습니다. a =10, b = 20, c = undefined 숫자 + undefined는 숫자변환 안되니까 NaN이됨
 
 function 함수1(a = 10, b = 20, c = 30) {
     return a + b + c
 }
-함수1(1, 1)
+함수1(1, 1) // 32
 
 function 함수1(a = 10, b = 20, c = 30) {
     return a + b + c
 }
 // a와 c에 들어갈 것이라고 생각했지만 a와 b에 들어갑니다.
-함수1(a = 1, c = 1)
+함수1(a = 1, c = 1) // 
 
 // 아래와 같은 식별 이슈가 있을 경우 object로 넘깁니다. roro기법
 function runPython(user, time, code, lv) {
