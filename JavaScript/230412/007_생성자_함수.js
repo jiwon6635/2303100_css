@@ -22,6 +22,7 @@ function Book(책이름, 책가격, 저자, 출판일) {
     this.출판일 = 출판일
 }
 
+
 let newBook2 = Book("JavaSCript", 100000, "홍길동", "2023.04.12") // undefined? why? return 값이 없어서!
 
 let newBook3 = new Book("JavaSCript", 100000, "홍길동", "2023.04.12")

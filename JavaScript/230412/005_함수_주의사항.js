@@ -69,6 +69,7 @@ function test(b) {
 test(a)
 a // 다른 언어의 경우 call by ref로 동작하여 a의 값이 1000으로 바뀝니다.
 
+
 /*
 call by value
 아규먼트에 값이 넘어올 때 복사한 값이 넘어온다!

@@ -122,6 +122,7 @@ var person = (function () {
     }
 })();
 
+
 person.getAge();
 person.setAge(20);
 

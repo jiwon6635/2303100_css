@@ -60,6 +60,7 @@ for (const i of Object.entries(data)) {
 // 직접 순회가 가능한 Map!
 let m = new Map();
 
+
 m.set('하나', 1) // 메서드 체이닝
     .set('둘', 2)
     .set('셋', 3)

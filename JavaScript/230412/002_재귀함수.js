@@ -108,6 +108,7 @@ function isPalindrome(str, cur, cnt) {
     }
 }
 
+
 // 2. 주어진 입력 값 문자열을 순차적으로 isPalindrome 함수의 인자로 넣어서 팰린드롬 여부 판단
 input.forEach(el => isPalindrome(el, 0, 1));
 
