@@ -3,9 +3,108 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+} 
+
+body,p,h,ul,img {
+    margin: initial;
+    padding: initial;
+}
+button{
+    all:unset;
 }
 
-.meun{
+li {
+    list-style-type: none;
+}
+
+header {
+    background-color: #F2E9D8;
+    height: 102px;
+}
+
+
+.logo {
+    display: flex;                                 
+    justify-content: space-between;
+    
+}
+
+.logo h1{
+    width: 130px;
+    height: 40px; 
+    margin: 31px 130px;
+
+}
+
+.menu{
     font-weight: bold;
+    font-size: 16px;
     color: #3e3d3d;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+.menu p{
+    margin: 40px 30px;;
+}
+.menu button{
+    margin: 26px 40px 320px 40px; 
+    background-color: #D97652;
+    width: 140px;
+    height: 50px;
+    border-radius: 40px;
+    color: aliceblue;
+}
+
+.menu button{
+    margin: 26px 40px 320px 40px; 
+    background-color: #D97652;
+    width: 140px;
+    height: 50px;
+    border-radius: 40px;
+    color: aliceblue;
+}
+
+.first-section {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    background-color: #F2E9D8;
+    gap: 30px;
+}
+
+.first-section-contents {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+.first-section-contents h1 {
+    margin-left: 320px;
+    font-size: 48px;
+    margin-bottom: 0;
+    margin-top: 260px;
+}
+
+.first-section-contents p{
+    margin: 0 320px;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+.first-section-contents button{
+    margin: 40px 320px; 
+    background-color: #D97652;
+    width: 140px;
+    height: 50px;
+    border-radius: 40px;
+    text-align: center;  
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.first-section img {
+    margin-right: 320px;
 }
