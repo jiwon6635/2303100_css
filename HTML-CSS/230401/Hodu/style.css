@@ -108,3 +108,11 @@ header {
 .first-section img {
     margin-right: 320px;
 }
+
+
+.second-section {
+    display: flex;
+    margin: 0 320px;
+}
+.second-section-contents{
+}
