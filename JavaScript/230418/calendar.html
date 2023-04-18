@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #calendar {
+            display: inline-block;
+            padding: 20px;
+            background: #0c0c0c81;
+            text-align: center;
+            color: #fff;
+        }
+
+        #calendar table {
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 25px;
+            color: orange;
+            margin: 10px;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: 1px solid #666;
+        }
+
+        th:first-child,
+        td:first-child {
+            color: red;
+        }
+
+        .prev,
+        .next {
+            color: inherit;
+            padding: 10px;
+            margin: 5px;
+            background-color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <article id="calendar">
+    <h2>💚나의 멋진 HTML 달력💚</h2>
+    <table>
+        <caption>
+            <time datetime="2023-04">
+                <span class="year"></span>년
+                <span class="month"></span>월
+            </time>
+        </caption>
+        <tr>
+            <th scope="col">일</th>
+            <th scope="col">월</th>
+            <th scope="col">화</th>
+            <th scope="col">수</th>
+            <th scope="col">목</th>
+            <th scope="col">금</th>
+            <th scope="col">토</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+    </table>
+    <button type="button" class="prev">이전달</button>
+    <button type="button" class="next">다음달</button>
+    </article>
+
+    <script>
+
+        function calendar(newYear, newMonth) {
+            // 1. 무슨 요일에 시작하는지 알아야 한다!
+            const time = new Date(newYear,  newMonth -1, 1);  // 우리가 원하는 인덱스 값 가지기 위해서 -1
+
+            //2. 해당 월에 며칠이나 있는지!
+            // 32 에서 다음달로 넘어가는 날의 일을 빼서 해당월에 며칠인지 계산
+            // const timeLength = 32 - new Date(newYear, newMonth -1, 32).getDate();
+
+
+            // 0으로 하면 이전달 체크되니까 인덱스값 조정해서 해당 월의 날수 계산가능한 코드!!!
+            const timeLength = new Date(newYear, newMonth, 0).getDate();
+
+            let year = time.getFullYear(),
+                month = time.getMonth(),
+                date = time.getDate(),
+                day = time.getDay();
+
+            const captionYear = document.querySelector('.year'),
+                captionMonth = document.querySelector('.month'),
+                timeEl = document.querySelector('time'),
+                days = document.querySelectorAll('tr td');
+                
+            for (let i = 0; i < days.length; i++) {
+                days[i].innerHTML = '&nbsp;';
+            }
+
+            for (let i = day; i < day + timeLength; i++) {
+                days[i].textContent = date++;
+            }
+            captionYear.textContent = year;
+            captionMonth.textContent = month + 1;
+            timeEldateTime = `${year}-${month + 1 }`;
+        }
+
+        const btns = document.querySelectorAll('button');
+        btns.forEach((item) => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('prev')) {
+                    calendar(year, --month);
+                } else {
+                    calendar(year, ++month);
+                }
+            });
+        });
+
+
+        let year = new Date().getFullYear(),
+            month = new Date().getMonth() + 1;
+        
+        calendar(year,month);
+    </script>
+</body>
+
+</html>
