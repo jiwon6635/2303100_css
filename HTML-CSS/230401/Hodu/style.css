@@ -113,6 +113,8 @@ header {
 .second-section {
     display: flex;
     margin: 0 320px;
+        margin-top: 80px;
 }
 .second-section-contents{
+    
 }
