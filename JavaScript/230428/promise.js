@@ -26,8 +26,9 @@ sayHello()
 // });
 
 
-// .then쓰는거 보다 나은 방법
-
+// .then쓰는거 보다 나은 방법 async await
+// promise 문법을 사용하지 않고도 결과 얻을 수 있음 
+// 익숙한 코드사용 사용 가능한 이점이 있음
 async function test() {
     const hello1 = await sayHello();
     console.log(hello1);
