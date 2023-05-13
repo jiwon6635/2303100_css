@@ -11,8 +11,6 @@ const video = document.querySelector(".video-container");
 //     }
 //     });
 
-// preloader
-
 window.onclick = function() {
     if (video.paused) {
     video.play();
@@ -21,12 +19,13 @@ window.onclick = function() {
     }
 };
 
-video.addEventListener('pause', function() {
-    video.controls = false;
-});
+    // video.addEventListener('pause', function() {
+    // video.controls = false;
+    // });
 
+
+// preloader
 const preloader = document.querySelector(".preloader");
-
 window.addEventListener("load", function () {
     preloader.classList.add("hide-preloader");
 });
