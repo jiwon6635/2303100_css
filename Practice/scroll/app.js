@@ -1,9 +1,3 @@
-// Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
-// pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
-// slice extracts a section of a string without modifying original string
-//offsetTop - A Number, representing the top position of the element, in pixels
-
-// ********** set date ************
 // select span
 const date = document.getElementById("date");
 date.innerHTML = new Date().getFullYear();
@@ -81,4 +75,39 @@ scrollLinks.forEach((link) => {
     linksContainer.style.height = 0;
   });
 });
-// calculate heights
+
+
+
+
+
+
+// 이미지 목록과 현재 인덱스
+var images = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg"];
+var currentIndex = 0;
+
+// 사진 업데이트 함수
+function updatePhoto() {
+  var photoContainer = document.getElementById("photoContainer");
+  var img = photoContainer.getElementsByTagName("img")[0];
+  img.src = images[currentIndex];
+  img.alt = "Photo " + (currentIndex + 1);
+}
+
+// 이전 버튼 클릭 시
+document.getElementById("prevButton").addEventListener("click", function() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  updatePhoto();
+});
+
+// 다음 버튼 클릭 시
+document.getElementById("nextButton").addEventListener("click", function() {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  updatePhoto();
+});
+

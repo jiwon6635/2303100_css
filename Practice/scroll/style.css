@@ -1,8 +1,4 @@
-/*
-=============== 
-Fonts
-===============
-*/
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 /*
@@ -42,7 +38,7 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
-  --clr-secondary: hsla(182, 63%, 54%);
+  --clr-secondary: rgb(132, 138, 138);
   --clr-black: #222;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
@@ -94,7 +90,7 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
@@ -141,7 +137,7 @@ p {
 /*  global classes */
 
 .btn {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background: transparent;
   color: var(--clr-black);
   padding: 0.375rem 0.75rem;
@@ -247,7 +243,7 @@ nav {
   background: var(--clr-white);
   color: var(--clr-grey-5);
   font-size: 1.1rem;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--spacing);
   display: block;
   transition: var(--transition);
@@ -285,7 +281,7 @@ nav {
     background: transparent;
     color: var(--clr-white);
     font-size: 1.1rem;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     letter-spacing: var(--spacing);
     display: block;
     transition: var(--transition);
@@ -300,8 +296,8 @@ nav {
 /* hero */
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
-    url(./hero-bcg.jpeg) center/cover no-repeat;
+  background: linear-gradient(rgba(98, 98, 101, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./bg.jpg) center/cover no-repeat;
 }
 .banner {
   min-height: 100vh;
@@ -311,7 +307,7 @@ header {
 }
 .container h1 {
   color: var(--clr-white);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .container p {
   color: var(--clr-white);
@@ -327,7 +323,7 @@ header {
 /* sections and title */
 .title h2 {
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .title span {
   color: var(--clr-secondary);
@@ -341,13 +337,13 @@ header {
   background: var(--clr-white);
 }
 footer {
-  background: var(--clr-grey-1);
+  background: #6c8570b0;
   padding: 5rem 1rem;
 }
 footer p {
   color: var(--clr-white);
   text-align: center;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   letter-spacing: var(--spacing);
   margin-bottom: 0;
 }
@@ -383,4 +379,32 @@ footer p {
   100% {
     transform: scale(1);
   }
+}
+
+
+#about img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+#photoContainer {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.btn-tour {
+  text-align: center;
+}
+
+#prevButton ,
+#nextButton {
+  margin-top: 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #a7c1ab, #5b6c5de7); /* 그라데이션 스타일 적용 */
+  color: white; /* 텍스트 색상 */
+  padding: 10px 20px; /* 패딩 설정 */
 }
