@@ -5,7 +5,7 @@ let movieName = movieNameRef.value.toUpperCase();
 
 // API에서 데이터를 가져오는 함수 getMovie
 let getMovie = () => {
-    let movieName = movieNameRef.value.toUpperCase();;
+    let movieName = movieNameRef.value.toUpperCase();
     
     // url에 OMDb API에 요청할 URL 저장 영화 이름, api키를 사용해서 url 생성
     let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
