@@ -1,0 +1,60 @@
+1. npm install recoil
+2. 최상단 파일인 index.js 파일에 <RecoilRoot> import해서 감싸줌
+3. 보통 전역상태(atom, selector)는 한 폴더에 모아서 관리
+  - Atom : state 역할
+  - Selector : derived state(Atom기반 파생 데이터)
+
+[ Atom ]
+- key, default 로 구성
+  key : 보통 아톰의 이름, 전역적으로 유일한 값
+  default : 값
+
+- 구현 예시
+  export const ExAtom = atom({
+    key: '키값',
+    default: 값
+  })
+
+- 사용 방법
+  atom 불러올 파일에서 사용할 atom import
+  const [value, setValue] = useRecoilState(ExAtom)
+  
+  값만 필요한 경우
+  const value = useRecoilValue(ExAtom)
+  변경함수만 필요한 경우
+  const setValue = useSetRecoilState(ExAtom)
+
+
+[ Selector ]
+- key, get, set 으로 구성
+  key : 보통 아톰의 이름, 전역적으로 유일한 값
+  get : 원본 state의 값을 변경시키지 않고 원하는 값 가져옴
+  set : 원본 state의 값을 변경
+
+- 구현 예시
+export const ExSelector = selector({
+ key: '키값',
+ get: ({get}) => {
+  const 원본 = get(ExAtom)
+  return 원본을_로직통해_변형한값
+ }
+ set: ({set}, 인자로_받아온값) => {
+  const 변경할_새로운값 = 인자로_받아온값을 변형하는로직
+  set(ExAtom, 변경할_새로운값)
+ }
+})
+
+- 사용 방법
+  selector 불러올 파일에서 사용할 selector import
+  Atom과 같이 useRecoilState, useRecoilValue, useSetRecoilState 사용 가능
+
+  한번에 선언하기
+  const [selector, setSelector] = useRecoilState(ExSelector)
+  각각 따로 선언하기
+  const get_결과값_가져오기 = useRecoilValue(ExSelector)
+  const set_기존값_변경하기 = useSetRecoilState(ExSelector)
+
+  get 결과값 가져오기 : 기존의 값을 변경하지 않고 원하는 변형값을 도출하는 경우
+                        selector = get_결과값_가져오기
+  set 기존값 변경하기 : 인자로 준 값을 기반으로 변경시켜 기존의 값을 변경시키는 경우
+                        setSelector(인자) = set_기존값_변경하기(인자)
