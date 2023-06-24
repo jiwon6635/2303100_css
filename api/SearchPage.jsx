@@ -1,15 +1,13 @@
 import { useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import styled from 'styled-components';
 
-import GetSearch from '../api/GetSearch';
-import { SearchHeader } from '../components/header/SearchHeader'
-import { NavBar } from '../components/common/NavBar';
+import { getSearch } from '../api/searchAPI';
+import  SearchHeader  from '../components/header/SearchHeader'
 import SearchProfile from '../components/common/SearchProfile';
+import { NavBar } from '../components/common/NavBar';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODkwOTgwYjJjYjIwNTY2MzMzYjQyYSIsImV4cCI6MTY5MTk4NjMxOCwiaWF0IjoxNjg2ODAyMzE4fQ.QfSaENpQz1KpNArVe9p14KMiLMSJheS5URXCMfdjB_g';
 
 export default function SearchPage() {
   // 검색창에 입력
@@ -20,33 +18,37 @@ export default function SearchPage() {
   const [isLoading, setIsLoading] = useState(false)
 
   // 입력값이 변경되었을 때 값을 추출해서 search에 저장
-  const inputChange = (e)=>{
-    const {value} = e.target
-    setSearch(value)
-  }
-// GetSearch에 await걸어줌
-// 아무것도 입력하지않아도 api에서 받아온게 뜨니까 return으로 입막
-  const setResult = async () => {
-    setSearchList(await GetSearch(search));
-  }
-// 여러번 동작 아무것도 입력하지 않았을때 아무것도 안뜨게 하기
-  useEffect(() => {
-    setIsLoading(true)
-    if(search === '') {
-      setIsLoading(false)
-      return setSearchList([])
+  const navigate = useNavigate();
+  
+  // GetSearch에 await걸어줌
+  // 아무것도 입력하지않아도 api에서 받아온게 뜨니까 입막음완료
+    const setResult = async () => {
+      setSearchList(await getSearch(search));
     }
-    setResult()
+  // 여러번 관리 useEffect 아무것도 입력하지 않았을때 아무것도 안뜨게 하기
+  useEffect(() => {
+    let timer;
+    if(search.length >= 1) {      
+      setResult()
+      setIsLoading(true)
+    } else if (search.length === 0 ){
+      setIsLoading(false)
+      timer = setTimeout(() => {
+        setSearchList([])
+      }, 500);
+    }
     setIsLoading(false)
-}, [search])
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [search])
 
-console.log(searchList) 
   return (
     <>
-      <SearchPageStyle>
       <SearchHeader value={search} setValue={setSearch}></SearchHeader>
+      <SearchPageStyle>
       <SearchResultWrapper>
-        {isLoading ? <div>로딩중...</div> : (
+        {isLoading ? null: (
           <>
           {searchList ? (
         <>
@@ -63,22 +65,28 @@ console.log(searchList)
         </>)}
       
       </SearchResultWrapper>
-      <NavBar></NavBar>
       </SearchPageStyle>
     </>
   );
 }
 
-const SearchPageStyle = styled.div `
+const SearchPageStyle = styled.div`
+  padding: 20px 16px 0;
   width: 390px;
-  height: 844px;
+  height: var(--screen-nav-height);
   margin: 0 auto;
   background-color: var(--backgroud-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    background-color: var(--background-color);
+    width: 0px;
+  }
+`;
 
 const SearchResultWrapper = styled.ul `
   display: flex;
