@@ -55,7 +55,7 @@ function addItem(e) {
     // append child
     list.appendChild(element);
     // display alert
-    displayAlert("item added to the list", "success");
+    displayAlert("목록에 추가되었습니다.", "success");
     // show container
     container.classList.add("show-container");
     // set local storage
