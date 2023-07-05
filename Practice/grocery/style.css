@@ -251,7 +251,7 @@ Grocery List
   font-size: 0.85rem;
 }
 .submit-btn:hover {
-  background: var(--clr-primary-5);
+  background: rgb(139, 174, 139);
   color: var(--clr-white);
 }
 
