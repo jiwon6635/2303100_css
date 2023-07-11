@@ -13,7 +13,7 @@ html {
 
 body {
     align-items: center;
-    background: linear-gradient(320deg, #eb02be,#ffef78,#63c9b4);
+    background: linear-gradient(320deg, #ccd1cf,#a0bda8,#b8b7d8);
     display: flex;
     font-family: 'Dosis', sans-serif; 
     /* swap: 글꼴이 다운로드되기 전까지, 시스템 글꼴을 사용하다가 다운로드가 완료되면 웹 글꼴을 적용한다. */
@@ -82,7 +82,8 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
     color: #fff;
-    background: #4d6d78;
+    /* background: #4d6d78; */
+    background: #4f6969 ;
 }
 
 .calc-button:last-child:hover {
@@ -91,7 +92,8 @@ body {
 }
 
 .calc-button:active{
-    background-color: #faf6b6;
+    background-color: #91ae91;
+    color: #fff;
 }
 
 .double {
