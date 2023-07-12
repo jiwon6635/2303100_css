@@ -4,6 +4,7 @@ let runningTotal = 0;
 let buffer = "0";
 // 이전에 입력된 연산자
 let previousOperator;
+let shouldResetBuffer = false;
 
 const screen = document.querySelector('.screen');
 
@@ -28,11 +29,12 @@ function handleSymbol(symbol){
             break;
         case '=':
             if(previousOperator === null) {
-                return
+                return;
             }
             flushOperation(parseInt(buffer));
             previousOperator = null;
-            buffer = runningTotal;
+						// 숫자 그대로 남기기
+            buffer = runningTotal.toString();
             runningTotal = 0;
             break;
         case '←':
@@ -67,7 +69,7 @@ function handleMath(symbol){
         flushOperation(intBuffer);
     }
     previousOperator = symbol;
-    buffer = '0';
+    shouldResetBuffer = true;
 }
 
 function flushOperation(intBuffer){
@@ -83,17 +85,19 @@ function flushOperation(intBuffer){
 }
 
 function handleNumber(numberString){
-    if(buffer === '0'){
+    if(buffer === '0' || shouldResetBuffer){
         buffer = numberString;
+				shouldResetBuffer = false;
     }else{
         buffer += numberString;
     }
 }
 
 function init(){
-    document.querySelector('.calc-buttons').
-    addEventListener('click', function(event){
-        buttonClick(event.target.innerText);
+    document
+    .querySelector('.calc-buttons')
+    .addEventListener('click', function(event){
+      buttonClick(event.target.innerText);
     })
 }
 init();
@@ -115,10 +119,14 @@ function handleKeyboardInput(event) {
   // 연산자 입력 처리
   switch (keyValue) {
     case '+':
-    case '-':
-      handleMath(keyValue);
-      break;
-     // 1. 최종 수정 => `/`와 `*` 키 처리
+        handleMath(keyValue);
+        break;
+      
+     // 1. 최종 수정 => `-`,`/`와 `*` 키 처리
+     case '-':
+        handleMath('−');
+        screen.innerText = buffer;
+        break;
      case '/':
         handleMath('÷');
         screen.innerText = buffer;
@@ -127,7 +135,6 @@ function handleKeyboardInput(event) {
         handleMath('×');
         screen.innerText = buffer;
         break;
-    case '=':
 
     // 2. key 이름 반드시 대문자로 시작 할 것
     case 'Enter':
