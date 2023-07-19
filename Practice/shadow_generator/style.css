@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: #aeb966;
+    background-color: #cce1ad;
 }
 
 label{
@@ -32,7 +32,7 @@ label{
 }
 
 #preview{
-    background-color: #575656;
+    background-color: #cce1ad;
     width: 200px;
     height: 200px;
     position: relative;
@@ -70,7 +70,7 @@ input[type="checkbox"]{
 }
 
 .code-container button{
-    background-color: #4d7a3b;
+    background-color: #cce1ad;
     border-radius: 5px;
     cursor: pointer;
     border: none;
