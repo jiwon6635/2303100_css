@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      a {
+        font-weight: bolder;
+        display: block;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+      }
+      h2 {
+        margin: 0;
+        text-transform: capitalize;
+        color: royalblue;
+      }
+      h3 {
+        color: #cf2f31;
+      }
+      div:not(:first-child) {
+        margin-top: 16px;
+      }
+      article {
+        display: none;
+        padding: 15px;
+        width: 500px;
+        color: #b5b5b7;
+        box-sizing: border-box;
+        background-color: #2f3033;
+      }
+      article:not(:first-child) {
+        margin-top: 20px;
+      }
+      .return > span {
+        box-sizing: border-box;
+        padding: 3px;
+        font-weight: bolder;
+        color: white;
+
+        background-color: #cf2f31;
+      }
+      /* .a11y-hidden {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="guide"></div>
+    <script>
+      const guide = [
+        {
+          keyname: 'uuid',
+          description: 'UUID 형식의 고유 식별자를 생성합니다.',
+          usage: '&lt;uuid()&gt;',
+          arguments: [
+          { param: 'tags', type: 'Object', description: '어쩌구저쩌구1' },
+          { param: 'index', type: 'Number', description: '어쩌구저쩌구2' }
+          ],
+          returns: 'string',
+        },
+        {
+          keyname: 'index',
+          description:
+            '데이터의 인덱스 값을 생성합니다. start로 지정한 값 부터 +1 씩 생성합니다.',
+          usage: '&lt;index(integer)&gt;',
+          arguments: 'b',
+          returns: 'number',
+        },
+        {
+          keyname: 'username',
+          description: '랜덤한 사용자 이름을 반환합니다.',
+          usage: '&lt;username()&gt;',
+          arguments: 'c',
+          returns: 'string',
+        },
+        {
+          keyname: 'password',
+          description: '랜덤한 비밀번호를 반환합니다.',
+          usage: '&lt;password(min_length, max_length)&gt;',
+          arguments: 'd',
+          returns: 'string',
+        },
+        {
+          keyname: 'int',
+          description: '최소값(min)과 최대값(max) 사이의 값을 반환합니다.',
+          usage: '&lt;int(min, max)&gt;',
+          arguments: 'e',
+          returns: 'number',
+        },
+        {
+          keyname: 'float',
+          description:
+            '최소값과 최대값사이의 float 값을 자릿수에 맞춰서 반환합니다.',
+          usage: '&lt;float(min, max, round)&gt;',
+          arguments: 'f',
+          returns: 'number',
+        },
+        {
+          keyname: 'boolean',
+          description: 'true 혹은 false를 반환합니다.',
+          usage: '&lt;boolean()&gt;',
+          arguments: 'g',
+          returns: 'boolean',
+        },
+        {
+          keyname: 'random',
+          description:
+            'input의 item 항목에 들어있는 값들 중 하나를 반환합니다.',
+          usage: '&lt;random("item1", "item2", "item3", …)&gt;',
+          arguments: 'h',
+          returns: 'string',
+        },
+        {
+          keyname: 'lorem',
+          description: '랜덤한 문장을 반환합니다.',
+          usage: '&lt;lorem(number, unit)&gt;',
+          arguments: 'i',
+          returns: 'string',
+        },
+        {
+          keyname: 'picture',
+          description: '입력받은 픽셀크기의 이미지가 담긴 링크를 반환합니다.',
+          usage: '&lt;picture(width, height)&gt;',
+          arguments: 'j',
+          returns: 'string',
+        },
+      ];
+      for (let i = 0; i < guide.length; i++) {
+        const name = [
+          'keyname',
+          'description',
+          'usage',
+          'arguments',
+          'returns',
+        ];
+        const myGuide = document.querySelector('.guide');
+        const myA = document.createElement('a');
+
+        // article
+        const myArticle = document.createElement('article');
+        const myH2 = document.createElement('h2');
+        // description
+        const desDiv = document.createElement('div');
+        const desH3 = document.createElement('h3');
+        const desP = document.createElement('p');
+        // usage
+        const usgDiv = document.createElement('div');
+        const usgH3 = document.createElement('h3');
+        const usgCode = document.createElement('code');
+        // arguments
+        const argDiv = document.createElement('div');
+        const argH3 = document.createElement('h3');
+        const argP = document.createElement('p');
+        const argTable = document.createElement('table');
+        const argThead = document.createElement('thead');
+        const argTbody = document.createElement('tbody');
+        
+        argH3.innerHTML = name[3];
+        argTable.appendChild(argThead);
+        argTable.appendChild(argTbody);
+
+        // 테이블 헤더 생성
+        const argHeaderRow = document.createElement('tr');
+        const argHeaderParam = document.createElement('th');
+        const argHeaderDescription = document.createElement('th');
+        const argHeaderType = document.createElement('th');
+        argHeaderParam.textContent = 'Param';
+        argHeaderType.textContent = 'Type';
+        argHeaderDescription.textContent = 'Description';
+        argHeaderRow.appendChild(argHeaderParam);
+        argHeaderRow.appendChild(argHeaderType);
+        argHeaderRow.appendChild(argHeaderDescription);
+        argThead.appendChild(argHeaderRow);
+
+        for (const arg of guide[i].arguments) {
+        // 인자를 나타내는 행 생성
+        const argRow = document.createElement('tr');
+        // 인자의 이름을 담은 셀 생성
+        const argParamCell = document.createElement('td');
+        // 인자의 타입을 담은 셀 생성
+        const argTypeCell = document.createElement('td');
+        // 인자의 설명을 담은 셀 생성
+        const argDescriptionCell = document.createElement('td');
+
+        // 차례대로 속성값 입력
+        argParamCell.textContent = arg.param;
+        argTypeCell.textContent = arg.type;
+        argDescriptionCell.textContent = arg.description;
+
+        // 각 셀을 해당 행에 추가하는 코드
+        argRow.appendChild(argParamCell);
+        argRow.appendChild(argTypeCell);
+        argRow.appendChild(argDescriptionCell);
+        argTbody.appendChild(argRow);
+        }
+
+       argDiv.appendChild(argH3);
+       argDiv.appendChild(argTable);
+        // returns
+        const rtnDiv = document.createElement('div');
+        const rtnH3 = document.createElement('h3');
+        const rtnSpan = document.createElement('span');
+
+        myA.innerHTML = guide[i].keyname;
+        myA.setAttribute('href', `#${guide[i].keyname}`);
+        myA.addEventListener('click', () => {
+          myA.classList.toggle('active');
+          if (myA.classList.contains('active')) {
+            myArticle.style.display = 'block';
+          } else if (!myA.classList.contains('active')) {
+            myArticle.style.display = 'none';
+          }
+        });
+        myH2.innerHTML = guide[i].keyname;
+        myH2.classList.add('a11y-hidden');
+        // description
+        desDiv.classList.add(name[1]);
+        desH3.innerHTML = name[1];
+        desP.innerHTML = guide[i].description;
+        desDiv.append(desH3, desP);
+
+        // usage
+        usgDiv.classList.add(name[2]);
+        usgH3.innerHTML = name[2];
+        usgCode.innerHTML = guide[i].usage;
+        usgDiv.append(usgH3, usgCode);
+
+        // arguments
+        argDiv.classList.add(name[3]);
+        argH3.innerHTML = name[3];
+        argP.innerHTML = guide[i].arguments;
+        argDiv.append(argH3, argP);
+
+        // returns
+        rtnDiv.classList.add(name[4]);
+        rtnH3.innerHTML = name[4];
+        rtnSpan.innerHTML = guide[i].returns;
+        rtnDiv.append(rtnH3, rtnSpan);
+
+        myArticle.append(myH2, desDiv, usgDiv, argDiv, rtnDiv);
+        myGuide.append(myA, myArticle);
+      }
+    </script>
+  </body>
+</html>
