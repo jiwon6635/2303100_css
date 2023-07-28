@@ -1,4 +1,4 @@
-const guide = [
+const guideData = [
         {
           keyname: 'boolean',
           description: 'true 혹은 false를 반환합니다.',
@@ -45,29 +45,26 @@ const guide = [
         },
       ]
 
-
-      
-
-  // 스타일 클래스를 적용하여 요소를 생성하는 함수 정의
-  function createStyledElement(tagName, className, text) {
-    const element = document.createElement(tagName);
-    element.classList.add(className);
-    element.innerText = text;
-    return element;
-  }
-
-  // 출력하는 함수 정의
-  function printReturnsValue() {
-    const outputElement = document.getElementById('output');
-
-    guide.forEach((item) => {
-      const tagName = item.returns;
-      const className = tagName.toLowerCase();
-
-      const element = createStyledElement(tagName, className, item.keyname);
-      outputElement.appendChild(element);
+    // 출력해야할 코드
+    // <div> <!-- 1 -->
+    //   <span>Returns</span> <!-- 2 -->
+    //   <String>String</String> <!-- 3 -->
+    // </div>
+  
+    // 1
+    const rtnContainer = createEl({
+        tagName: 'div',
+        parentEl: toggleContent,
     });
-  }
-
-  // 함수 호출하여 returns 값 출력
-  printReturnsValue();
+    // 2
+    createEl({
+        tagName: 'span',
+        parentEl: rtnContainer,
+        text: 'Returns',
+    });
+    // 3
+    createEl({
+        tagName: data.returns,
+        parentEl: rtnContainer,
+        text: data.returns,
+  });
