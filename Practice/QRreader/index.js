@@ -45,13 +45,13 @@ fileInp.addEventListener("change", async e => {
     fetchRequest(file, formData);
 });
 
-// Copy Text To Clipboard
+// 복사버튼 클릭시 특정 텍스트를 복사하는 기능
 copyBtn.addEventListener("click", () => {
     let text = document.querySelector("textarea").textContent;
     navigator.clipboard.writeText(text);
 });
 
-// When user click on form do fileInp Evenetlistener function
+// form요소 클릭시 fileInp 이벤트 리스너 함수 호출
 form.addEventListener("click", () => fileInp.click());
-
+// closeBtn 클릭시 wrapper.active 클래스 제거
 closeBtn.addEventListener("click", () => wrapper.classList.remove("active"));
