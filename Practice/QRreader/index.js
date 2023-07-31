@@ -5,10 +5,13 @@ const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
 
-// Fecth Data From Api
 
+// file과 formData 받는 함수
+// file : 업로드할 파일, formData : file을 포함한 다른 데이터를 담는 FormData객체
 function fetchRequest(file, formData) {
     infoText.innerText = "Scanning QR Code...";
+    
+    // QR 코드를 스캔하는 API에 POST 요청
     fetch("http://api.qrserver.com/v1/read-qr-code/", {
         method: 'POST', body: formData
     }).then(res => res.json()).then(result => {
