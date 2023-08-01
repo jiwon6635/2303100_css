@@ -16,10 +16,14 @@ function fetchRequest(file, formData) {
         method: 'POST', body: formData
     }).then(res => res.json()).then(result => {
         result = result[0].symbol[0].data;
+        // HTML 요소 내용 설정
         infoText.innerText = result ? "Upload QR Code To Scan" : "Couldn't Scan QR Code";
         if (!result) return;
+        // 스캔 결과가 있을경우 페이지 내의 textarea 요소에 설정하여 사용자에게 표시
         document.querySelector("textarea").innerText = result;
+        // img요소의 src 속성을 file에 대한 URL로 설정(업로드한 QR코드 이미지 보여주기)
         form.querySelector("img").src = URL.createObjectURL(file);
+        // QR코드 스캔이 성공적으로 실행되었을때 활성화 시킴
         wrapper.classList.add("active");
     }).catch(() => {
         infoText.innerText = "Couldn't Scan QR Code...";
