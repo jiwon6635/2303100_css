@@ -30,12 +30,18 @@ function fetchRequest(file, formData) {
     });
 }
 
-// Send QR Code File With Request To Api
+// 이미지 파일을 서버로 보내어 QR 코드를 스캔하고 스캔 결과를 화면에 표시하는 기능
+// 파일 입력 요소의 값이 변경 되었을 때 실행
 fileInp.addEventListener("change", async e => {
+    // 선택된 파일 객체를 가져옴 (업로드할 QR코드 이미지)
     let file = e.target.files[0];
     if (!file) return;
+    // FormData 객체를 생성 -> 폼 데이터를 쉽게 생성하고 서버로 보낼 수 있는 방법 제공
     let formData = new FormData();
+    // file을 FormData 객체에 첨부
+    // 서버로 보낼 요청의 본문에 파일을 첨부하는 과정
     formData.append('file', file);
+    // QR코드 스캔을 처리하고 스캔 결과를 화면에 표시
     fetchRequest(file, formData);
 });
 
