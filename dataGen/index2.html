@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="guide"></div>
+    <script>
+    function createStyledElement(tagName, className, text) {
+    const element = document.createElement(tagName);
+    element.classList.add(className);
+    element.innerText = text;
+    return element;
+  }
+
+  // 출력하는 함수 정의
+  function printReturnsValue() {
+    const outputElement = document.getElementById('output');
+
+    guide.forEach((item) => {
+      const tagName = item.returns;
+      const className = tagName.toLowerCase();
+
+      const element = createStyledElement(tagName, className, item.keyname);
+      outputElement.appendChild(element);
+    });
+  }
+
+  // 함수 호출하여 returns 값 출력
+  printReturnsValue();
+    </script>
+</body>
+
+</html>

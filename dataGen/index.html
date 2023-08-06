@@ -245,14 +245,38 @@
         argDiv.append(argH3, argP);
 
         // returns
-        rtnDiv.classList.add(name[4]);
-        rtnH3.innerHTML = name[4];
-        rtnSpan.innerHTML = guide[i].returns;
-        rtnDiv.append(rtnH3, rtnSpan);
+        createEl({
+        tagName: 'p',
+        parentEl: toggleContent,
+        text: `Returns`,
+        });
+        createEl({
+          tagName: '${data.returns}',
+          classNames: [],
+          parentEl: toggleContent,
+          text: `${data.returns}`,
+        });
 
         myArticle.append(myH2, desDiv, usgDiv, argDiv, rtnDiv);
         myGuide.append(myA, myArticle);
       }
+       
+    const rtnContainer = createEl({
+      tagName: 'div',
+      parentEl: toggleContent,
+    });
+  
+    createEl({
+      tagName: 'span',
+      parentEl: rtnContainer,
+      text: 'Returns',
+    });
+  
+    createEl({
+      tagName: data.returns,
+      parentEl: rtnContainer,
+      text: data.returns,
+    });
     </script>
   </body>
 </html>
