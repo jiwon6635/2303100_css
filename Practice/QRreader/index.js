@@ -14,11 +14,16 @@ function fetchRequest(file, formData) {
     // QR 코드를 스캔하는 API에 POST 요청
     fetch("http://api.qrserver.com/v1/read-qr-code/", {
         method: 'POST', body: formData
+
+        // json 형태로 받은 데이터를 처리하기 위해 then 사용
     }).then(res => res.json()).then(result => {
+        
+        // json 데이터를 응답받아 result 변수에 할당
         result = result[0].symbol[0].data;
         // HTML 요소 내용 설정
         infoText.innerText = result ? "Upload QR Code To Scan" : "Couldn't Scan QR Code";
         if (!result) return;
+        
         // 스캔 결과가 있을경우 페이지 내의 textarea 요소에 설정하여 사용자에게 표시
         document.querySelector("textarea").innerText = result;
         // img요소의 src 속성을 file에 대한 URL로 설정(업로드한 QR코드 이미지 보여주기)
@@ -48,6 +53,7 @@ fileInp.addEventListener("change", async e => {
 // 복사버튼 클릭시 특정 텍스트를 복사하는 기능
 copyBtn.addEventListener("click", () => {
     let text = document.querySelector("textarea").textContent;
+    copyBtn.innerText="Copied!"
     navigator.clipboard.writeText(text);
 });
 

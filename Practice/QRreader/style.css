@@ -135,10 +135,15 @@ textarea:hover::-webkit-scrollbar-thumb{
     width: calc(100% / 2 - 10px);
 }
 
-.buttons button:active{
+.buttons button:hover{
     transform: scale(0.95);
+    background-color: rgb(127, 166, 178);
+    color: #fff;
 }
-
+.buttons button:active {
+    background-color: rgb(127, 166, 178);
+    color: #fff;
+}
 @media (max-width: 450px){
     .wrapper{
         padding: 25px;
