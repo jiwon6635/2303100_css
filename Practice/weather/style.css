@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: #37474f;
+    background-color: #f7f8fa;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -31,9 +31,10 @@ body{
     display: flex;
     border-radius: 25px;
     justify-content: center;
-    background: url("img.jpg");
+    /* background: url("bg/default.jpg"); */
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     transform: scale(1.03) perspective(200px);
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -48,7 +49,7 @@ body{
     height: 100%;
     top : 0;
     left: 0;
-    background: linear-gradient(135deg, #5c6bc0 10%, #0d47a1 100%);
+    background: linear-gradient(135deg, #acb3aa 50%, #0d48a1be 100%);
     border-radius: 25px;
     opacity: 0.5;
 }
