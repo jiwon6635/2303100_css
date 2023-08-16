@@ -85,14 +85,14 @@ function fetchWeatherData(location) {
           <span class="value">${todayWindSpeed}</span>
         </div>
       `;
-
+      // 현재 시간을 나타내는 객체 생성
       const today = new Date();
-        const nextDaysData = data.list.slice(1);
+      // 첫 번째 항목 제외 => 나머지 데이터를 새 배열에 저장 (다음날 부터의 정보 다루기)
+      const nextDaysData = data.list.slice(1);
+      // 중복을 제거하기 위한 빈 객체 생성
+      const uniqueDays = new Set();
 
-        // 중복되지 않는 날짜 필터링
-        const uniqueDays = new Set();
-        let count = 0;
-
+      let count = 0;
         // 날씨 정보를 표시할 요소의 내용을 초기화
         daysList.innerHTML = '';
         
@@ -110,7 +110,10 @@ function fetchWeatherData(location) {
             const iconCode = dayData.weather[0].icon;
 
             // 날씨 데이터를 반복하면서 각 날짜가 중복되는 날짜인지 확인 => 오늘 날짜 제외
+            // 현재 반복 중인 날짜의 요일이 uniqueDays Set에 이미 추가되지 않고
+            // 해당 날짜가 오늘의 날짜와 다르다면 실행
             if (!uniqueDays.has(dayAbbreviation) && forecastDate.getDate() !== today.getDate()) {
+              // 현재 반복중인 날짜의 요일을 dayAbbreviation 변수에서 가져와 uniqueDays Set에 추가
                 uniqueDays.add(dayAbbreviation);
                 
                 daysList.innerHTML += `

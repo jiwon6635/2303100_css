@@ -151,7 +151,7 @@ body{
     font-weight: 700;
     border-radius: 25px;
     padding: 10px;
-    background: #303f9f;
+    background: #5c6f77;
     color: #fff;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -159,5 +159,6 @@ body{
 }
 
 .loc-button:hover{
-    background: #1a237e;
+    background: #ffffff;
+    color: #5c6f77;
 }
