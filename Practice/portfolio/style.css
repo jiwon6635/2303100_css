@@ -19,19 +19,19 @@ a{
 }
 
 a:hover{
-    color: #97CBA9;
+    color: #c44141;
 }
 
 h1.header{
-    color: #97CBA9;
+    color: #488e61;
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 h2{
     color: #616161;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 canvas{
@@ -78,6 +78,7 @@ canvas{
 }
 
 .footer p{
-    color: #fff;
+    color: #3a908c;
     font-size: 1.3rem;
+    font-weight: 600;
 }
