@@ -23,7 +23,7 @@ a:hover{
 }
 
 h1.header{
-    color: #488e61;
+    color: hsl(94, 37%, 47%);
     font-size: 2.5rem;
     font-weight: 600;
 }
