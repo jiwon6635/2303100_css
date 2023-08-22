@@ -19,20 +19,15 @@ a{
 }
 
 a:hover{
-    color: #c44141;
+    color: #c74c13;
 }
 
 h1.header{
-    color: hsl(94, 37%, 47%);
+    color: #444444;
     font-size: 2.5rem;
-    font-weight: 600;
-}
-
-h2{
-    color: #616161;
-    font-size: 2rem;
     font-weight: 500;
 }
+
 
 canvas{
     height: 100vh;
@@ -46,9 +41,14 @@ canvas{
 }
 
 .logo{
-    font-family: 'Monoton', cursive;
-    color: #675656;
-    font-size: 10rem;
+    font-family: 'Roboto Slab', serif;
+    color: #535853;
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.logo:hover {
+    color: #000000;
 }
 
 .links-list ul li{
@@ -59,8 +59,9 @@ canvas{
 }
 
 .links-list h1{
-    color: #668BA4;
+    color: #345469;
     font-size: 2.5rem;
+    font-weight: 500;
 }
 
 .links-list ul li span{
