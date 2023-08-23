@@ -1,11 +1,10 @@
 particlesJS("background", {
-
     particles: {
         number: {
             value: 50, // Number of Particles (count)
-            density: {
+            ensity: {
                 enable: true,
-                value_area: 300, // Area where particles will be distributed
+                value_area: 300, // Area wdhere particles will be distributed
             },
         },
 
@@ -54,7 +53,7 @@ particlesJS("background", {
         // Particle movement
         move: {
             enable: true,
-            speed: 0.2,
+            speed: 5,
             direction: "none",
             random: true,
             straight: false,
@@ -77,7 +76,6 @@ particlesJS("background", {
             resize: true, // Resize particles animation on window resize
         },
     },
-
     // Detect retina displays
     retina_detect: true,
 
