@@ -14,7 +14,7 @@ body {
   justify-content: center;
   padding: 0 10px;
   min-height: 100vh;
-  background: #06283D;
+  background: #638aa397;
 }
 
 .container {
@@ -77,7 +77,7 @@ li,
 
 .controls .row .icons i {
   width: 50px;
-  color: #adadad;
+  color: #5b5a5d;
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -101,6 +101,7 @@ li,
   font-size: 18px;
   background: none;
   padding-left: 5px;
+  cursor: pointer;
 }
 
 .text-input textarea::-webkit-scrollbar {
@@ -143,12 +144,18 @@ li,
   padding: 14px;
   outline: none;
   border: none;
-  color: #fff;
+  color: #373535;
   cursor: pointer;
   margin-top: 20px;
   font-size: 17px;
   border-radius: 5px;
-  background: #06283D;
+  background: #638aa397;
+}
+
+.container button:hover {
+  color: #fff;
+  background: rgb(106, 116, 125);
+  transition: 0.5s;
 }
 
 @media (max-width: 660px) {
