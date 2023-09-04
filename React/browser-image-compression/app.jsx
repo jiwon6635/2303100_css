@@ -17,7 +17,6 @@ function App() {
     if (!uploadImage) return;
 
     const imageFile = dataURItoFile(uploadImage);
-
     const compressedImage = await compressImage(imageFile);
 
     // 이미지 서버 저장 로직
