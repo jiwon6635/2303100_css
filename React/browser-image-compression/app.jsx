@@ -1,5 +1,5 @@
-// 이미지 압축을 위한 커스텀 훅
 import React, { useEffect, useState } from "react";
+// 이미지 압축을 위한 커스텀 훅
 import useImageCompress from "./hook/useImageCompress";
 // 데이터 URI를 파일로 변환하는 함수
 import { dataURItoFile } from "./utils/common";
