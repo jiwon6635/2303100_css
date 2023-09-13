@@ -64,6 +64,33 @@ translateBtn.addEventListener("click", () => {
     });
 });
 
+// 버튼 클릭 없이 번역 되도록 시간 설정
+const translateText = () => {
+    let text = fromText.value.trim(),
+      translateFrom = selectTag[0].value,
+      translateTo = selectTag[1].value;
+    if (!text) return;
+    toText.setAttribute('placeholder', 'Translating...');
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        toText.value = data.responseData.translatedText;
+        data.matches.forEach((data) => {
+          if (data.id === 0) {
+            toText.value = data.translation;
+          }
+        });
+        toText.setAttribute('placeholder', 'Translation');
+      });
+  };
+  
+  fromText.addEventListener('input', () => {
+    setTimeout(() => {
+      translateText();
+    }, 1000);
+  });
+
 icons.forEach(icon => {
     icon.addEventListener("click", ({ target }) => {
         // 텍스트가 입력되지 않았을 경우 함수를 종료
