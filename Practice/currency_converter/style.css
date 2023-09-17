@@ -16,7 +16,7 @@ body{
     justify-content: center;
     min-height: 100vh;
     padding: 0 10px;
-    background: #7199bbee;
+    background: #9ec5e7ee;
     overflow: hidden;
 }
 
@@ -132,8 +132,8 @@ body{
 .container form button{
     width: 100%;
     height: 42px;
-    color: #4b4646;
-    background: #abc5d1;
+    color: #252525b4;
+    background: #aed2e8e6;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
@@ -141,6 +141,6 @@ body{
 }
 
 .container form button:hover{
-    background: #758d9c;
-    color: #fff;
+    background: #adb9c7;
+    color: #0000009b;
 }
