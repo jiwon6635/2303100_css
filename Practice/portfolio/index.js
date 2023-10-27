@@ -1,27 +1,27 @@
 particlesJS("background", {
     particles: {
         number: {
-            value: 50, // Number of Particles (count)
+            value: 50, // 입자 수
             ensity: {
                 enable: true,
-                value_area: 300, // Area wdhere particles will be distributed
+                value_area: 300, 
             },
         },
 
         color: {
-            value: ["#DEF5E5", "#BCEAD5", "#C4DFDF", "#8EC3B0"], // Particles color
-            // value: ["#A0C49D", "#C4D7B2", "#E1ECC8", "#F7FFE5"], // Particles color
-            // value: ["#FEF5ED", "#D3E4CD", "#ADC2A9", "#99A799"], // Particles color
-            // value: ["#C4DFDF", "#D2E9E9", "#E3F4F4", "#F8F6F4"], // Particles color
+            value: ["#DEF5E5", "#BCEAD5", "#C4DFDF", "#8EC3B0"], // 
+            // value: ["#A0C49D", "#C4D7B2", "#E1ECC8", "#F7FFE5"], // 
+            // value: ["#FEF5ED", "#D3E4CD", "#ADC2A9", "#99A799"], // 
+            // value: ["#C4DFDF", "#D2E9E9", "#E3F4F4", "#F8F6F4"], // 
 
 
 
         },
         shape: {
-            type: "circle", // Shape type
+            type: "circle", // 입자모양 
         },
         opacity: {
-            value: 0.3, // Base opacity of particles
+            value: 0.3, // 입자 투명도
             random: true,
             anum: {
                 enable: true,
@@ -31,7 +31,7 @@ particlesJS("background", {
             },
         },
         size: {
-            value: 800, // Base size of particles
+            value: 800, // 입자크기
             random: false,
             anim: {
                 enable: true,
@@ -41,42 +41,40 @@ particlesJS("background", {
             },
         },
 
-        // Connecting lines
+        // 연결 선
         line_linked: {
             enable: false,
-            distance: 150, // Maximum distance between linked particles
+            distance: 150, // 최대 거리
             color: "#000",
             opacity: 0.4,
             width: 1,
         },
 
-        // Particle movement
+        // 입자의 움직임
         move: {
             enable: true,
             speed: 5,
             direction: "none",
             random: true,
             straight: false,
-            out_mode: "out", // Behavior when particles move out of the canvas
+            out_mode: "out", 
             bounce: false,
         },
     },
-    // Interactivity settings
+
     interactivity: {
         detect_on: "canvas",
         events: {
             onhover: {
-                enable: false, // Enable hover interactivity
+                enable: false, 
                 mode: "grab",
             },
             onclick: {
-                enable: false, // Enable for click
-                mode: "remove", // Push particles on click
+                enable: false,
+                mode: "remove", 
             },
-            resize: true, // Resize particles animation on window resize
+            resize: true,
         },
     },
-    // Detect retina displays
     retina_detect: true,
-
 });
