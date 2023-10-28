@@ -35,8 +35,8 @@ nav {
     font-size: 18px;
     font-weight: 500;
     background-color: rgba(241, 241, 241, 0.807);
-    border: solid 2px rgba(0, 0, 0, 0.534);
-    box-shadow: 0px 8px 0px 0px rgba(34, 67, 102, 0.664);
+    /* border: solid 2px rgba(0, 0, 0, 0.534); */
+    box-shadow: 0px 7px 0px 0px rgba(34, 67, 102, 0.503);
     margin: 10px 0px 10px 0;
 }
 .tab-button:hover {
