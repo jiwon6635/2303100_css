@@ -1,7 +1,7 @@
 .wrapper{
     height: 270px;
     width: 420px;
-    background-color: #d3432a;
+    background-color: rgb(105, 130, 154);
     border-radius: 7px;
     padding: 30px 30px 35px;
     transition: all 0.2s ease;
@@ -44,12 +44,12 @@ form img{
 }
 
 form .content i{
-    color: #c74d3f8e;
+    color: #33659a8e;
     font-size: 55px;
 }
 
 form .content p{
-    color: #c74d3f8e;
+    color: #33659a8e;
     margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
