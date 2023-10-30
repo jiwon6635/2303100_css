@@ -33,9 +33,9 @@ async function getExchangeRate() {
         const exchangeRate = result.conversion_rates[toCur.value];
         const totalExRate = (amountVal * exchangeRate).toFixed(2);
 
-        // 쉼표를 추가하는 부분
+        // 입력값을 출력할때 쉼표를 추가하는 부분
         const formattedAmount = amountVal.toLocaleString();
-        // 쉼표를 추가하는 부분
+        // 출력값에 쉼표를 추가하는 부분
         const formattedTotalExRate = formatNumberWithCommas(totalExRate);
         exRateTxt.innerText = `${formattedAmount} ${fromCur.value} = ${formattedTotalExRate} ${toCur.value}`;
     } catch (error) {
