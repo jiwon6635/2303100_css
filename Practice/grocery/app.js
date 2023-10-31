@@ -1,5 +1,3 @@
-// ****** select items **********
-
 const form = document.querySelector(".grocery-form");
 const alert = document.querySelector(".alert");
 const grocery = document.getElementById("grocery");
@@ -7,22 +5,19 @@ const submitBtn = document.querySelector(".submit-btn");
 const container = document.querySelector(".grocery-container");
 const list = document.querySelector(".grocery-list");
 const clearBtn = document.querySelector(".clear-btn");
-// edit option
+
 let editElement;
 let editFlag = false;
 let editID = "";
-// ****** event listeners **********
 
-// submit form
+// 이벤트 리스너
 form.addEventListener("submit", addItem);
-// clear list
+
 clearBtn.addEventListener("click", clearItems);
-// display items onload
+
 window.addEventListener("DOMContentLoaded", setupItems);
 
-// ****** functions **********
 
-// add item
 function addItem(e) {
   e.preventDefault();
   const value = grocery.value;
@@ -46,27 +41,27 @@ function addItem(e) {
               </button>
             </div>
           `;
-    // add event listeners to both buttons;
+
     const deleteBtn = element.querySelector(".delete-btn");
     deleteBtn.addEventListener("click", deleteItem);
     const editBtn = element.querySelector(".edit-btn");
     editBtn.addEventListener("click", editItem);
 
-    // append child
+
     list.appendChild(element);
-    // display alert
+
     displayAlert("목록에 추가되었습니다.", "success");
-    // show container
+
     container.classList.add("show-container");
-    // set local storage
+
     addToLocalStorage(id, value);
-    // set back to default
+
     setBackToDefault();
   } else if (value !== "" && editFlag) {
     editElement.innerHTML = value;
     displayAlert("value changed", "success");
 
-    // edit  local storage
+
     editLocalStorage(editID, value);
     setBackToDefault();
   } else {
