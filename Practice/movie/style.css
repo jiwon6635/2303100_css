@@ -51,9 +51,16 @@ body{
 }
 
 .search-container button{
+    border-radius: 5px;
     background-color:#74a397af;
     border: none;
     cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #dc8960d5;
+    transition: 0.4s;
+    color: #ffffff;
 }
 
 #result{
