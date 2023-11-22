@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 body {
-    background-color: #e6f3f1a8;
+    background-color: rgba(234, 244, 247, 0.878);
 }
 
 .title img {
@@ -15,8 +15,8 @@ body {
 .bar p {
     font-size: 20px;
     font-weight: bold;
-    line-height: 60px;
-    color: rgba(202, 61, 61, 0.774);
+    line-height: 55px;
+    color: rgba(184, 67, 56, 0.774);
     padding: 0 10px;
 }
 
@@ -62,12 +62,12 @@ body {
 
 
 .center h2 {
-    color:rgba(55, 74, 109, 0.856);
+    color:rgba(24, 35, 55, 0.856);
     font-size: 40px;
 }
 
 .center h3 {
-    color: rgba(104, 108, 110, 0.884);
+    color: rgba(74, 72, 72, 0.884);
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -86,20 +86,21 @@ body {
     justify-content: center;
     gap: 10px;
     width: 135px;
-    height: 135px;
-    background: #c4dfdf;
-    border-radius: 5px;
-    box-shadow: inset 0 -2px 20px rgba(85, 85, 85, 0.39);
+    height: 160px;
+    border: solid 1px rgba(196, 90, 90, 0.052);
+    background: rgba(230, 241, 255, 0.463);
+    border-radius: 20px;
+    box-shadow: inset -5px -5px 10px rgba(102, 119, 152, 0.575);
 }
 
 .timer-container span {
     font-size: 25px;
     font-weight: bold;
-    color:#443939ce;
+    color:rgba(25, 100, 161, 0.916);
 }
 
 .timer-container h4 {
     margin: 0 auto;
     font-size: 50px;
-    color: rgba(33, 122, 122, 0.685);
+    color: rgba(14, 14, 14, 0.685);
 }
