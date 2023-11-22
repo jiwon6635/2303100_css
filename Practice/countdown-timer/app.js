@@ -30,7 +30,7 @@ let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
 
-const futureDate = new Date(2023, 5, 30, 9, 0, 0);
+const futureDate = new Date(2024, 5, 30, 9, 0, 0);
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -77,7 +77,7 @@ function getRemaindingTime() {
 
     if (t < 0) {
         clearInterval(countdown);
-        timer.innerHTML = `<h4 class="expired">sorry, this info has expired!</h4>`;
+        timer.innerHTML = `<h4 class="expired">완료된 일정입니다!</h4>`;
     }   
 }
   // countdown;
