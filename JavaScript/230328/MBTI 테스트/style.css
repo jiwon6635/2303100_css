@@ -45,7 +45,10 @@ article {
 .question {
     display:none;
 }
-
+.progress-bar {
+    background-color: #f0a35b;
+    transition: width 0.8s ease;
+}
 .result {
     display: none;
 }
