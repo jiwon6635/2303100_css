@@ -1,9 +1,33 @@
+@font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KCC-Hanbit';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'MangoDdobak-B';
+}
+body {
+    background-color: #FEFAE0;
+}
 .start h1{
     font-weight: bold;
+    font-size: 25px;
+    color: #806449;
 }
 .start button {
     width: 500px;
+    height: 50px;
     margin: 0 auto;
+    background-color: #5F6F52;
+    border: none;
+    font-family: 'KCC-Hanbit';
 }
 
 article {
