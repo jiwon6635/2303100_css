@@ -113,6 +113,13 @@
         $("#B").click(function(){
             next();
         });
+
+        document.getElementById('A').addEventListener('click', function() {
+            this.blur();
+        });
+        document.getElementById('B').addEventListener('click', function() {
+            this.blur();
+        });
         // 다음문제로 넘어가는 동작 
         function next() {
             

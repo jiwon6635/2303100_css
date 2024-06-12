@@ -33,8 +33,8 @@ body {
 }
 
 .start button:hover {
-    background-color: #aec591; /* 호버 시 배경색 변경 */
-    color: #242323
+    background-color: #aec591;
+    color: #242323;
 }
 
 article {
@@ -44,11 +44,30 @@ article {
 
 .question {
     display:none;
+    color: #66503b;
+    h2 {
+        font-size: 30px;
+    }
 }
 .progress-bar {
     background-color: #f0a35b;
     transition: width 0.8s ease;
 }
+#A, #B{
+    font-size: 18px;
+    height: 70px;
+    background-color: #75925d; 
+    border: none; 
+    border-radius: 50px;
+    color: #fff; 
+    transition : background-color 0.8s ease, color 0.8s ease, border-radius 0.8s ease;
+}
+#A:hover, #B:hover {
+    background-color: #acc597;
+    border: none;
+    color: #242424;
+}
+
 .result {
     display: none;
 }
