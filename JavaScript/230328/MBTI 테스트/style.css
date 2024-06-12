@@ -60,13 +60,13 @@ article {
     transition: width 0.8s ease;
 }
 #A, #B{
-    font-size: 18px;
+    font-size: 20px;
     height: 70px;
     background-color: #75925d; 
     border: none; 
     border-radius: 50px;
     color: #fff; 
-    transition : background-color 0.8s ease, color 0.8s ease, border-radius 0.8s ease;
+    transition : background-color 0.6s ease, color 0.5s ease, border-radius 0.6s ease;
 }
 #A:hover, #B:hover {
     background-color: #acc597;
@@ -76,19 +76,31 @@ article {
 
 .result {
     display: none;
+    h1 {
+        font-family: 'MangoDdobak-B';
+        color: #66503b;
+        margin: -20px;
+    }
+    h3 {
+        color: #e48a40;
+    }
 }
 #animal {
+    font-size: 45px;
     margin-top: 0;
+    color: #6f9159;
 }
 #explain {
     font-family: 'Ownglyph_ryuttung-Rg';
-    font-size: 30px;
+    font-size: 35px;
     margin-top :0;
+    color: #242323;
 }
-img {
-    width: 400px;
-    height: 300px;
+#img {
+    width: 500px;
+    height: 400px;
     margin: 0 auto;
+    box-shadow: 10px 20px 40px rgba(82, 83, 75, 0.8);
 }
 
 .share {
