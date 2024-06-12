@@ -10,15 +10,21 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 *{
-    font-family: 'MangoDdobak-B';
+    font-family: 'KCC-Hanbit';
 }
 body {
     background-color: #FEFAE0;
 }
 .start h1{
-    font-weight: bold;
-    font-size: 25px;
+    font-family: 'MangoDdobak-B';
+    font-size: 40px;
     color: #806449;
 }
 .start button {
@@ -71,7 +77,14 @@ article {
 .result {
     display: none;
 }
-
+#animal {
+    margin-top: 0;
+}
+#explain {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    font-size: 30px;
+    margin-top :0;
+}
 img {
     width: 400px;
     height: 300px;
@@ -96,4 +109,5 @@ img {
 
 .banner-img {
     width: 300px;
+    height: 500px;
 }
