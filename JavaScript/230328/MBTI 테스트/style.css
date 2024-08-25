@@ -77,22 +77,25 @@ article {
 .result {
     display: none;
     h1 {
-        font-family: 'MangoDdobak-B';
+        font-family: 'Ownglyph_ryuttung-Rg';
         color: #66503b;
         margin: -20px;
     }
     h3 {
+        font-family: 'Ownglyph_ryuttung-Rg';
+        font-size: 35px;
         color: #e48a40;
     }
 }
 #animal {
-    font-size: 45px;
+    font-family: 'Ownglyph_ryuttung-Rg';
+    font-size: 55px;
     margin-top: 0;
     color: #6f9159;
 }
 #explain {
     font-family: 'Ownglyph_ryuttung-Rg';
-    font-size: 35px;
+    font-size: 30px;
     margin-top :0;
     color: #242323;
 }
